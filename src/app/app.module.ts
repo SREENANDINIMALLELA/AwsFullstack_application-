@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
+import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 
 registerLocaleData(en);
 
@@ -39,9 +40,11 @@ registerLocaleData(en);
     IconsProviderModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AmplifyAngularModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_GB }],
+  providers: [{ provide: NZ_I18N, useValue: en_GB },
+  AmplifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
