@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
+import { AuthGuard } from './auth.guard';
 
 registerLocaleData(en);
 
@@ -33,9 +34,9 @@ registerLocaleData(en);
     NgZorroAntdModule,
     RouterModule.forRoot([
           {path: 'login', component: AuthComponent},
-          {path: 'home', component: HomeComponent},
-          {path: 'home/todos', component: DriversComponent},
-          {path: 'home/documents', component: DocumentsComponent},
+          {path: 'home', component: HomeComponent,canActivate: [AuthGuard]},
+          {path: 'home/todos', component: DriversComponent,canActivate: [AuthGuard]},
+          {path: 'home/documents', component: DocumentsComponent, canActivate: [AuthGuard]},
           {
               path: '**',
               redirectTo: 'login',
