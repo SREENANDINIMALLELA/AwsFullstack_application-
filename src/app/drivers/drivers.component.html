@@ -16,7 +16,8 @@
       <td nzSpan="20">{{todo.title}}</td>
       <td nzSpan="20">{{todo.content}}</td>
     </tr>
-    <button (click)="createItem()"  >Create item</button>
-    <button (click)="deleteItem()"  >Delete item</button>
+    <button  type="primary"  (click)="createItem()" >Create item</button>
+
+    <button  type="primary" (click)="deleteItem()"  >Delete item</button>
     </tbody>
   </nz-table>

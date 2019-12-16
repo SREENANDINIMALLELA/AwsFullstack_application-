@@ -44,6 +44,14 @@
   width: 32px;
   vertical-align: middle;
 }
+.logo {
+       width: 50px; /* Width of new image */
+         height: 40px; /* Height of new image */
+         padding: 0;
+        background-image: url("../assets/afs.jpg");
+        margin: 16px 24px 16px 0;
+        float: left;
+}
 
 .sidebar-logo h1 {
   display: inline-block;

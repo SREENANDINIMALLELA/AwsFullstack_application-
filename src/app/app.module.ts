@@ -32,10 +32,15 @@ registerLocaleData(en);
     AppRoutingModule,
     NgZorroAntdModule,
     RouterModule.forRoot([
-          {path: '', component: AuthComponent},
+          {path: 'login', component: AuthComponent},
           {path: 'home', component: HomeComponent},
           {path: 'home/todos', component: DriversComponent},
           {path: 'home/documents', component: DocumentsComponent},
+          {
+              path: '**',
+              redirectTo: 'login',
+              pathMatch: 'full'
+            }
         ]),
     IconsProviderModule,
     FormsModule,
